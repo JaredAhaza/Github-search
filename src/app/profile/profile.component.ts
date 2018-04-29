@@ -6,10 +6,10 @@ import { ProfileService} from '../profile.service'
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-// export class ProfileComponent implements OnInit {
-//   app:any[];
-//   repos:any[];
-//   username:string;
+export class ProfileComponent implements OnInit {
+  app:any[];
+  repos:any[];
+  username:string;
 
   constructor( private profileService : ProfileService) { 
      this.profileService.getAppInfo().subscribe(app => {
