@@ -1,3 +1,64 @@
-<p>
-  profile works!
-</p>
+<div class="container">
+<form class="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search User" 
+    [(ngModel)]="username" name="username" (keyup)="findapp()">
+
+  </div>
+</form>
+<div *ngIf="app">
+<div class="card card-default">
+  <div class="card-header">
+    {{app.name}} <small>({{app.login}})</small>
+    <span *ngIf="app.company">, Works at{{app.company}}</span>
+    {{app.location}}
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-3">
+       <small><img src="{{app.avatar_url}}" class="img-circle img-responsive" class="" alt="app image"></small> 
+      </div>
+      <div class="col-md-3">
+        <ul class="list-group">
+          <li class="list-group-item active" *ngIf="app.bio">{{app.bio}}</li>
+          <li class="list-group-item " >Currently studying</li>
+          <li class="list-group-item " *ngIf="app.blog"><a href="{{app.blog}}"
+             target="_blank">{{app.blog}}</a></li>
+          <li class="list-group-item " *ngIf="app.email"><a href="
+              emailto:{{app.email}}">{{app.email}}</a></li>
+        </ul>
+
+      </div>
+      <div class="clas col-md-4">
+        <div>
+          <p>
+            <span class="label badge-info">{{app.followers}}Followers</span>
+            <span class="label badge-danger">{{app.following}}Following</span>
+            <span class="label badge-success">{{app.public_gists}}Public Gists</span>
+            <span class="label badge-primary">{{app.public_repos}}Public Repos</span>
+          </p>
+          <p><a href="{{app.html_url}}" class="btn btn-danger pull-right">View github profile</a></p>
+        </div>
+        <div class="card-default">
+          <div class="card-header">
+            <h3 class="card-title">Repos</h3>
+            <div class="card-body" *ngFor="let repo of repos">
+              <p>
+                {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-info">View this project on github</a>
+                </p>
+                <p>
+                    {{repo.description}}
+                </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</div>
+</div>
