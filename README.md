@@ -1,19 +1,19 @@
-~
+
 # GithubApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
-#Objectives
+## Objectives
 
 This project is developed to enable one to seach for github user profiles and is able to see there public repos, number of followers, followings and the public gists.
 
-#Technologies used
+## Technologies used
 
 Angular
 Typescript
 css
 
-#Deployment
+## Deployment
 
 This project has been deployed to gihub and can be accessed by the following link 'https://jaredahaza.github.io/Github-search/'
 
