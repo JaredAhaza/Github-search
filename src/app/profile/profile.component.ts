@@ -24,14 +24,14 @@ export class ProfileComponent implements OnInit {
 
   findapp(){
     this.profileService.updateProfile(this.username)
-    this.profileService.getAppInfo().subscribe(app => {
-      console.log(app);
-      this.app = app;
-    });
-    this.profileService.getAppRepos().subscribe(repos => {
-      console.log(repos);
-      this.repos = repos;
-    })
+     this.profileService.getAppInfo().subscribe(app => {
+       console.log(app);
+       this.app = app;
+     });
+     this.profileService.getAppRepos().subscribe(repos => {
+       console.log(repos);
+       this.repos = repos;
+     })
   }
 
   ngOnInit() {
